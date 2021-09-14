@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+
+
+
+/* abrakadabra */
+
+
+.xyi {
+    display: flex;
+}
+
+.abrakadabra {
+    padding-top: 2%;
+}
+
+.vk {
+    display: flex;
+    width: 100%;
+}
+
+.itema {
+    width: 25%;
+    display: flex;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color: #fafafa;
+    font-family: Trebuchet MS, Helvetica;
+}
+
+header{
+    width: 100%;
+    padding: 10px 0.5% 0px 0.5%;
+    background: transparent;
+    float: left;
+    position: fixed;
+}
+
+header #logo {
+    color: #ff4400;
+    cursor: pointer;
+}
+
+header #logo span {
+    font-size: 1.7em;
+    line-height: 45px;
+    margin-left: 40px;
+    font-family: 'Suez One', serif;
+}
+
+@media (min-width: 701px) {
+    #logo {
+        float: left;
+        width: 30%;
+        font-size: 1.1em;
+    }
+}
+
+#about {
+  float: right;
+  width: 67%;  
+}
+
+@media (max-width: 700px) {
+    #logo {
+        margin-top: 15px;
+        width: 100;
+        font-size: 1.5em;
+    }
+}
+
+#about {
+    float: left;
+    width: 100%;
+}
+
+#about {
+    text-align: center;
+    font-size: 1em;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+
+#about > a {color: #fff}
+
+#about > a:hover {
+    color: #ff4400;
+    text-decoration: underline;
+}
+
+#about > a:not(:last-child) {
+    margin-right: 7%;
+}
+
+.fixed {
+    z-index: 5000;
+    background-color: #fff;
+    border-bottom: 1px solid silver;
+}
+
+header.fixed #logo {
+    color: #ff4400;
+}
+
+.fixed #about a {color: #343434}
+.fixed #about a:hover {color: #ff4400;}
+
+/* Главный блок сайта */
+
+#top {
+    width: 100%;
+    height: 1000px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAwFBMVEX///8tLSvnRyYmJiNlZWQYGBW5ubkcHBnmOw8qKij0tq3+9/alpaTnQBjmNQAAAADnRCFKSkjz8/M/Pz0REQ3mQRzmNwAgIB0ICADmOQkUFBDY2Nj40cv86uceHhv52NNRUVDxoJTo6Oj64NzqY0vvjn/2wrqJiYh4eHc0NDLoVDfsd2T97+zwlojuhXT1vLTGxsarq6pbW1ryqJ3pXUPoTS3sdWHraVLtgG/e3t7BwcGDg4JxcXCcnJuQkI/pWDzkH7M1AAAMFElEQVR4nO2da3eqOhCGVUQBS0ALCirepV5brbb2Zvv//9UB7UUlCQkkyD6L99PeqxrykElmJgEnl8uUKVOmTJkyZcqUKVOmTOlRZTEcdttt13Xb7e7QWVy7P+xU6bqb5Xwm2cBT3fZVP/zLHN0vlbZTuXYH42jR7s9nANiSauqFoHRT9bil7b3SvXZPo2io3KvAhqNdgkoAfC3df8luK+74CUhmKNsppmrXR/3htXtOpMrDM7AJhg5GCfRl6g3WfbZtqsELQBaWKR7J4VKNg/cLOXpI5wLr7oAaF+8b0pbG6RvITaEeZe6hpILn9rWRTlXp2xJLPl8m2KaHsS9JjPEO0tPCuKlz4Tsyjq7vPdwnmxffkfHlurGOMwKs59+lTNC/ImAfxHZ/BJJm1zLV7ozbBDyXDsZXCQHG3A30T6qe/Ko6TGoAj9LBMmFAJcEBPEqaOQnyVZ4BXff8dF467F4cZUt+3k93k/T6Q2KAQ5MixDZVG5jb5/FGcdvD4dBZOP6O1IPSv9/NbCCpFJjgPiFAl9hCTQnYu76LNK9KVxl/gToxpTRKZE3tk1mol+eZc4UgCaq0+ztgk1mFqSeQVc1JojQPb9un8NMVd2zWSaIHve7yQzt2ZUtws03wFGFTqf0CSFIwoHDA+tPiKfxGS/V5RPdcUb4IwkCuntEJXeB1W+3HSQa6L+FbIWDMDOhSTtiip9dnsW1oMQ5ddWxeXiMU0C4wWQYqyzBb5YTohKwDkslsDVjchzByQVzg97FNsGTpjYc7fFhRZ7/cVJ6wVwRz1nGx+4Sdjuwz/y+c2ZgqDz+MT0BZ+8Vn3A0Fcz7hYlvHXpVpUnyPSXf1Orcoo/KCi4HrDGNUBXMh6YtnZorLtHWdmem0MYAcA4yDHEycaO4YXaSCcYRgw+gi6Kvv0DPEZuQzRsi7qNtJbIGN0SYEmKzhS2RCaJrJnPJt0IgSgz1/9CQ0v5Lap31A92EUu/EKMtxWk9k0OQh9m+3Ysc0Lyumq8e8ehdpIrwFiHmq4QIVLShTQS40lVEdiesUKUox6/g/2JFOmTJkyZcqUiaFqtcFgUKvVrt0P9qq11neP1WnDsDxphpivFj9LryTfXJXCtXrF3zKCJrAKpXt7n2pGuSHIcv5Hsiw0REPr7Vth3360xFA1DSPf+1whO6CFN4FrfYrv4Vux3Gz8oZ1L6Bj5dzxkUUB891zeHWtqH3DImkbUBLLpW0z3BnfNZkgP5YaR32OMjJDwIMHI3yRKOPgwGkRNlJsT5JykIfSaEuXgrOFFWJto5J0TtMmABaHXH6N32RInwlKDaPx+1TD2TAi9u9V8S4CwVjRQqwtS5SlsoaAnzOe185vFg3AlRuhXXtYmbAjz1idnwhuLegCP6kwDK04kwrx2uqayJ5xY0VvTLhGjEeatkyWVOeGHGL21RsBOIxLmT24Va8I4gLIcMIiohCf9Ykw4iQGY14KraVTCfPmOD+GnEaOtoI3GIMxbrzwIS3Eak/NBwBiEQpED4WucEYTZaBzC38WGJeE0oh88qPMOAUQQyn9CNyhMmBPelUM+KzTKXkYpin46HPgjzEZRhL1vVW9lq4yELNcYE7awLcllK1/8XJfeVm+l9Wfx1jA6Z13T4JkwjFDunXxgsK6iYuBm6ZuwDBGik0GJfzl+FWMxDau3Ps9qaq191fqDhNsogrB6/pmVAJ+sP2a6vwlqDfuKXF3DPvpznXUTyScY79AUd7CfNo+MMmozhIQwV6vCZ6uAaNQXbBB/l1+40JPeeESkt55Kt4cQAWGjhIS5XB56cQt93RwsMsETrlHBjGyscd/zxl5A2igx4Qrqp5rI/bcohChPIZfD9kVrRQu9YUdImHuE2WkZtjEVlRB+E/25gLGUH+3R95qUsATrceMz+MHIhKjYwyAAxImUcABLSgVIoBuVEOVVLcxMYEqYg9kQrse0hFAj8cwEuYIwJ4StpsIjO8IPuENqxAUkJ4Q5K5aEcGfYDD22YUcInYfsrLQFXUmRgQoHQmjiJnwwI1xDA9kOfBubC+FNB9IBht5iAp2GWkxPQUN4C5smZUw0RUkITSug04UT4Q10LWcYtUG9YYOBkRIStuCb0BrmYJKOsAa9wOUZED/CVRO6lGNPb+kI4TtQcQM2NGHv7CODd8QxQuMO3mYEwhU0+Y3v7lGE1dfWj972PQ11UmngHhGgI4TGbCy8ISKil41fiQ3kdiO+A3SEUHfIZCmNs19axq50DAhxQWEihCL2OSIWhPhtHe6E+CH8H4wh5KSONeHFmp40IfQUJDIhfC3F+VvuhCLOF9ITwv0hbj+WN2GjF9YwHSE8PcSvZVwJhXD7oSOEbnThQwquhIIcfnNZ5Ba47IwrYeOWwHooCaEb3kwcYgRCg+i6lITwrTbjGoRCyDFJRMI9bJeESYJISShYH4TrGyUhwl0wiGpoCOWOViRe3SgJa/DTUYPocXwmhLIgare4x6ljEuZ60G0EBoMIzw875yftTcOYTkp0Wwq0hPCJGP9gBp7j354et6/XoS9cwERL+Ao/e8KepP9pFf/8kFrU54fQHVlCO21Z6E2r9BDeIJ4WKmMOKb9VsmR5ijKz9BDWUA8qNMOOEPd+UCv0EH9ND2FugtrTEzEHQF7Q3mtixzpFhAPkM1+NKdoNf/6+dkLxvsWVCBGx6aFH1jt0mtX2womTsaAxXpoI4Uni9zBqgVfUam9FjeDZvTQR5u7gXv+b0Zh+rFsHp1B7bZU+e2LgrTZZgIx0qggxT7YdAcqGpfmyDBH6SiJs7yFdhKt4j6p6Ax28QroIc+8hDwmHKrgHmDLCXC/6KcNR1mWCnjbCWifOs+wHxIsgPG2EiJ1TCl2+25U6wtirjXhxkfQR5lbR383zZFyGpykk9EYx8lyUtUBwmkbCXKsccUUVRLJ3165OmBtM6d7j/pZYhWT66ST0+kU/GWUN+phdWglzJZFuGOVmleKtoDQQ0v2kQr4jog4b0kvoLTg9i5CxU0Y/B5pmQs9v9DTkD7f8tSo2sb9t0hECarAgNILtCh3688DBp2zgIIWy1cMfht0VIQrfoQzXI6zhsMcboFq9C/7DZ5eYsp8QG49rFs8vXl+Dt8/i1DKaYrnjyz9J0YTeZM3inD9Fqr2uSt8HKqVV63/4a1+ZMmXKlClTpkyZLuUqKCVX9zTnFw5EKm4hHwdICPGuoXOqysxG9SJ+NR10fRBuRfoCwhSWrDMojYCs4VGQnuO3TqIhuiwhk8JdlQKyfXWbRHEJdH2SgsSmHNIQXarHLPCvFoQpGGZu+V9DZ1NxCaN7zMVNBrWQjhpjCsvxXVKdGaZ8HmBoQDvMdXiWlnvAlUBkaz4zTIFHnVsRYmxxQMZVLBfYOrJgx2MYXWwJd4m1N8YsqAW/zirzGnqLObZIp8reF+OKIPq39IltGb0Nvl4ug3prQbl4RB3Mma3dOfcJs3r7gDNmlzq7LB7RM9UxG8b2CF8M2APkFEuFIRZUMI6/5LRDih1zBAydiwfGl3i17B6+wvj4RsPd0Mt7tjqKnBs7fd0OvQDnsoTdkPLjvnRbXUYYyIr7DMLqxnuy5+ypzrTABYp/9xnodJAVdw7skJrxBwH2JccDwlSvPZHuQb48kK07w82ODI99NW64MNVrz2VKQH1Rurh1wXH7OwAITP/YYCLVeXP4UtIQyvpsvlTaQ+eUdOF03c14pwMbG/Cei2+B7DMN8bXrL6WbqmQDTx7N0+zJGwr/P7ZEAecryc29kLwGS6vTYf3K5L6bcCEFHxkzl71NzEJ/5IyQ1azZS2ec7hIqJMFhKGkWs6xxVDm7qLORSuZ1BvAoVyJy/3Gk89kiIVefs6nas4ScPFrOnCOjZCcSpYVp+MyJUZKuOAHP1eXB6PGlqah4d06S25FLt81U8flylmp4fk4oE2wTPUMnVUXZAspgGibdBvdXcvAEGi4L8WakLoHdQ9rM80LtMYg6kl4u+bW5rnsnVLe/BRLlUOoqUOcKu11z7nKUF5M0f9e9sQPb/tVjF3o57nKngrqkmihQL/n30v3ZfNNO+dTDyWkry+eZv2/hP/OjHuX9ywZ1tTC677vYjap/SP7Ok6Js+kdtlIeLnalMmTJlypQpU6ZMmTL96/oP8XouQ2g07hUAAAAASUVORK5CYII=);
+    background-blend-mode: multiply;
+    background-color: #2e3a44;
+    background-size: cover;
+    text-align: center;
+    color:#fff;
+    font-size: 3em;
+}
+
+@media(min-width: 1001px) {
+    #top {
+        font-size: 3em;
+    }
+}
+
+@media(max-width: 1000px) and (min-width: 651px) {
+    #top {
+        font-size: 2em;
+    }
+}
+
+@media(max-width: 650px) {
+    #top {
+        font-size: 1.3em;
+        padding-top: 50%;
+    }
+}
+
+#top h1 {
+    padding-top: 20%;
+}
+
+#top h6 {
+    color: #ccc;
+}
+
+/* Блок производства */
+
+#main {
+    padding: 100px 20%;
+    width: 60%;
+    float: left;
+    background-color: #f6f6f6;
+    border-top: 2px solid silver;
+    color: #484848;
+    font-size: 1.3em;
+}
+
+@media (min-width: 1401px) {
+    #main {
+        padding: 100px 20%;
+        width: 60%;
+    }
+}
+
+@media (max-width: 1400px) {
+    #main {
+        padding: 100px 10%;
+        width: 80%;
+    }
+}
+
+@media (max-width: 700px) {
+    #main div {
+        width: 98% !important;
+        margin-bottom: 20px;
+    }
+}
+
+#main div{
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+}
+
+#main h2 {font-size: 3em;}
+#main span {color: #a0a0a0}
+
+/* Каруселька */
+
+.carousel {
+    width: 100%;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100px; /* высота изображения */
+    object-fit: cover;
+  }
+
+.carousel {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 26px;
+}
+
+.carousel-wrap {
+    display: flex;
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+    display: block;
+    height: 600px;
+    max-width: 50%;
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+.carousel-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 2%;
+}
+
+.carousel-control.next {
+    right: 52%;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 50%;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carousel-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #428bca;
+}
+
+#title {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+/* caruselll */
+
+.carouselll {
+    width: 100%;
+  }
+  .carouselll-item img {
+    width: 100%;
+    height: 100px; /* высота изображения */
+    object-fit: cover;
+  }
+
+.carouselll {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 26px;
+}
+
+.carouselll-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carouselll-open:checked + .carouselll-item {
+    position: static;
+    opacity: 100;
+}
+
+.carouselll-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.carouselll-item img {
+    display: block;
+    height: 600px;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.carouselll-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carouselll-control.prev {
+    left: 52%;
+}
+
+.carouselll-control.next {
+    right: 2%;
+}
+
+.carouselll-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#carouselll-1:checked ~ .control-1,
+#carouselll-2:checked ~ .control-2,
+#carouselll-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carouselll-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carouselll-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carouselll-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carouselll-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carouselll-1:checked ~ .control-1 ~ .carouselll-indicators li:nth-child(1) .carouselll-bullet,
+#carouselll-2:checked ~ .control-2 ~ .carouselll-indicators li:nth-child(2) .carouselll-bullet,
+#carouselll-3:checked ~ .control-3 ~ .carouselll-indicators li:nth-child(3) .carouselll-bullet {
+    color: #428bca;
+}
+
+#title {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+/* Блок наши работы */
+
+#overiew {
+    padding: 100px 20%;
+    width: 60%;
+    float: left;
+    background-color: #f6f6f6;
+    border-top: 2px solid silver;
+    color: #484848;
+    font-size: 1.3em;
+}
+
+@media (min-width: 1401px){
+    #overiew {
+        padding: 100px 20%;
+        width: 60%;
+    }
+}
+
+@media (max-width: 1400px) {
+    #overiew {
+        padding: 100px 10%;
+        width: 80%;
+    }
+}
+
+@media (max-width: 700px) {
+    #overiew div {
+        width: 98%!important;
+        margin-bottom: 20px;
+    }
+}
+
+#overiew div {
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+}
+
+#overiew h2 {font-size: 3em;}
+#overiew span {color: #a0a0a0;}
+
+/* carusel two */
+
+.carousel1 {
+    width: 100%;
+  }
+  .carousel1-item img {
+    width: 100%;
+    height: 100px; /* высота изображения */
+    object-fit: cover;
+  }
+
+
+.carousel1 {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 26px;
+}
+
+.carousel1-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel1-open:checked + .carousel1-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel1-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.carousel1-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.carousel1-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carouse1l-control.prev {
+    left: 2%;
+}
+
+.carousel1-control.next {
+    right: 2%;
+}
+
+.carousel1-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#carousel1-1:checked ~ .control-1,
+#carousel1-2:checked ~ .control-2,
+#carousel1-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carousel1-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel1-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carousel1-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel1-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carousel1-1:checked ~ .control-1 ~ .carousel1-indicators li:nth-child(1) .carousel1-bullet,
+#carousel1-2:checked ~ .control-2 ~ .carousel1-indicators li:nth-child(2) .carousel1-bullet,
+#carousel1-3:checked ~ .control-3 ~ .carousel1-indicators li:nth-child(3) .carousel1-bullet {
+    color: #428bca;
+}
+
+#title {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+/* Контакты с картой */
+.wrp {
+	max-width: 900px;
+	margin: 0 auto;
+	position: relative;
+}
+.map-box { 
+	position: absolute;
+	top: 350px;
+	right: 20px; 
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #ddd;
+	z-index: 100;
+	width: 250px;
+	box-shadow: -1px -1px 24px 0px rgba(50, 50, 50, 0.5);
+}
+.map-box p {
+	font-size: 18px;
+}
+#map {
+	width: 100%; 
+	height: 350px;
+}
+
+
+/*
+* {
+    box-sizing: border-box;
+}
+ */
+
+
+/* Style inputs */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+
+.nesolestag-enadenud {
+    margin: 0 auto;
+  }
+  
+  .kesednsoled:after,
+  .kesednsoled:before {
+    content: ".";
+    display: table;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+    clear: both;
+  }
+
+  .ico-wrap {
+    color: #ff4400;
+    width: 48px;
+    height: 48px;
+    margin: 30px 18px 5px 5px;
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    border: 2px solid #ff4400;
+    float: left;
+    border-radius: 30px;
+  }
+  .ico-contact {
+    line-height: 1.9 !important;
+  }
+  .meanous-andscoev {
+    float: left;
+    margin-bottom: 20px;
+  }
+  .aio-icon-title {
+    font-size: 16px;
+    color: #ff4400;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  
+  @media (max-width: 767px) {
+    .meanous-andscoev,
+    .ico-wrap {
+    float: none;
+    text-align: center;
+    }
+    .ico-wrap {
+    margin: 0 auto 150px auto;
+    }
+  }
+  
